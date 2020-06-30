@@ -1,5 +1,6 @@
 class DosesController < ApplicationController
-  def new
+
+  def new #only if in a separate page
     @cocktail = Cocktail.find(params[:cocktail_id])
     @dose = Dose.new
   end

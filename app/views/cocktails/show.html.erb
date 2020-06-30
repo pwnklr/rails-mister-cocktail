@@ -9,7 +9,15 @@
 </ul>
 
 
+<ul>
+  <% @cocktail.reviews.each do |review| %>
+  <li><%= "#{review.content}" %></li>
+  <% end %>
+</ul>
+
+
 <p><%= link_to 'Back', root_path %></p>
-<p><%= link_to 'Add ingredient', new_cocktail_dose_path(@cocktail) %></p>
+<p><%= link_to 'Leave a review', new_cocktail_review_path(@cocktail) %></p>
 
 <%= render "doses/new", cocktail: @cocktail, dose: @dose %>
+<%= render "reviews/new", cocktail: @cocktail, review: @review %>
